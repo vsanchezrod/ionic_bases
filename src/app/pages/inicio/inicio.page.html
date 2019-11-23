@@ -1,20 +1,29 @@
 <ion-header no-border>
-    <ion-toolbar>
-      <ion-title>Componentes</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-toolbar>
+    <ion-title>Componentes</ion-title>
+  </ion-toolbar>
+</ion-header>
   
-  <!-- Aquí va el contenido-->
-  <ion-content>
-  
-    <ion-button routerLink="/alert">
-      Alert
-    </ion-button>
-  
-    <ion-button routerLink="/action-sheet">
-      Action Sheet
-    </ion-button>
-  
-  
-  </ion-content>
-  
+<!-- Aquí va el contenido-->
+<ion-content>
+
+  <!-- ion-list crea una lista-->
+  <ion-list>
+    <!-- El atributo detail da la información de que el elemento de la lista hace algo al hacer click-->
+    <ion-item *ngFor="let componente of componentes" [routerLink]="componente.redirectTo" detail>
+      <!-- El atributo slot nos permite determinar la posicion del icono-->
+      <ion-icon [name]="componente.icon" slot="start"></ion-icon>
+      <ion-label >{{ componente.name }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-button routerLink="/alert">
+    Alert
+  </ion-button>
+
+  <ion-button routerLink="/action-sheet">
+    Action Sheet
+  </ion-button>
+
+
+</ion-content>
