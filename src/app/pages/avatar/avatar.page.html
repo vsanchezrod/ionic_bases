@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <!-- Si existe un historial de pagina regresa a la anterior-->
+      <!-- El botón aparece solo cuando una historial pasado,
+      Para forzar que aparezca siempre se añade defaultHref y la ruta
+      a la que se quiera redirigir cuando no haya historial-->
+      <ion-back-button defaultHref="/inicio"></ion-back-button>
+    </ion-buttons>
+    
+    <ion-title>Avatar</ion-title>
+
+    <!-- Añadimos el avatar donde de un ion-buttons para que se adapte bien en la toolbar
+    No confundir con el ion-button dentro de la toolbar porque sino sale cuadrado -->
+    <ion-buttons slot="end">
+      <ion-avatar>
+        <img src="/assets/avatar.jpeg" alt="Avatar">
+      </ion-avatar>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <!-- Chips donde cada uno tiene su avatar y son elementos clickeables-->
+  <h3>Ion Chip con avatar</h3>
+  <ion-chip color="primary" *ngFor="let i of [1,1,1,1,1,1,1,1,1,1,1,1,1,1]">
+      <!-- Con el chip no se pone el slot-->
+      <ion-avatar>
+          <img src="/assets/avatar.jpeg" alt="Avatar">
+      </ion-avatar>
+      <ion-label>Chip</ion-label>
+  </ion-chip>
+
+  <!-- Lista de items donde cada uno tiene su avatar-->
+  <h3>Ion List con avatar</h3>
+  <ion-list *ngFor="let i of [1,1,1,1,1,1]">
+    <ion-item>
+      <ion-avatar slot="start">
+          <img src="/assets/avatar.jpeg" alt="Avatar">
+      </ion-avatar>
+      <ion-label>Item</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
